@@ -127,8 +127,17 @@ function Photography() {
   };
 
   const deletePhoto = async (i) => {
-    const out = await deletePhotoAPI(i);
+    const out = await deletePhotoAPI(i.id);
     if (out.status >= 200 && out.status < 300) {
+      const categoryData = allcategory.find(i2 => i.category === i2.name);
+
+      if (categoryData) {
+        const updatedCategoryList = categoryData.photographs.filter(photo => i.id !== photo.id);
+        categoryData.photographs = [];
+        if (updatedCategoryList !== []) { updatedCategoryList.map(i => categoryData.photographs.push(i)) }
+        await addPCategoryAPI(categoryData, categoryData.id);
+      }
+
       toast("Photo Deleted Successfully");
       getPhotos();
     } else {
@@ -340,7 +349,7 @@ function Photography() {
                       <img src={i.pImage} style={{ cursor: 'pointer', width: '100%', height: '290px' }} alt={i.name} />
                       <div className='overlay'>
                         <div className='button-container'>
-                          <Button variant="outline-light rounded-circle border-0 p-2" onClick={(e) => deletePhoto(i.id)}><Trash2 /></Button>
+                          <Button variant="outline-light rounded-circle border-0 p-2" onClick={(e) => deletePhoto(i)}><Trash2 /></Button>
                           <Button variant="outline-light rounded-circle border-0" onClick={(e) => editPhoto1(i.id)}><i className="fas fa-edit" /></Button>
                         </div>
                         <div className='details' style={{color:"#FFBF00"}}>

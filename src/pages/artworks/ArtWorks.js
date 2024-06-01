@@ -129,8 +129,19 @@ function ArtWorks() {
   };
 
   const deletePaintings = async (i) => {
-    const out = await deletePaintingAPI(i);
+    const out = await deletePaintingAPI(i.id);
     if (out.status >= 200 && out.status < 300) {
+      const categoryData = allcategory.find(i2 => i.category === i2.name);
+
+      if (categoryData) {
+        const updatedCategoryList = categoryData.paintings.filter(art => i.id !== art.id);
+        console.log(updatedCategoryList)
+        categoryData.paintings = [];
+        if (updatedCategoryList !== []) { updatedCategoryList.map(i => categoryData.paintings.push(i)) }
+        // console.log(categoryData);
+        await addPCategoryAPI(categoryData, categoryData.id);
+      }
+      
       toast("Painting Deleted Successfully");
       getPaintings();
     } else {
@@ -341,7 +352,7 @@ function ArtWorks() {
                       <img src={i.pImage} style={{ cursor: 'pointer', width: '100%', height: '290px' }} alt={i.name} />
                       <div className='overlay'>
                         <div className='button-container'>
-                          <Button variant="outline-light rounded-circle border-0 p-2" onClick={(e) => deletePaintings(i.id)}><Trash2 /></Button>
+                          <Button variant="outline-light rounded-circle border-0 p-2" onClick={(e) => deletePaintings(i)}><Trash2 /></Button>
                           <Button variant="outline-light rounded-circle border-0" onClick={(e) => editPainting1(i.id)}><i className="fas fa-edit" /></Button>
                         </div>
                         <div className='details' style={{color:"#FFBF00"}}>
