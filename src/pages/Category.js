@@ -14,7 +14,7 @@ function Category() {
 
   useEffect(() => {
     singleData();
-  }, [params.id]); // Updated dependency array to include 'params.id'
+  }, [params,singleData]); 
 
   return (
     <div className='py-5' style={{ backgroundColor: '#EEEEEE', color: '#135D66' }}>

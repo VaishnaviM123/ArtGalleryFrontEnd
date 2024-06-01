@@ -186,7 +186,7 @@ function ArtWorks() {
           if (categoryData) {
             const updatedCategoryList = categoryData.paintings.filter(art => selectedPaintingId !== art.id);
             categoryData.paintings = [];
-            if (updatedCategoryList != []) { updatedCategoryList.map(i => categoryData.paintings.push(i)) }
+            if (updatedCategoryList !== []) { updatedCategoryList.map(i => categoryData.paintings.push(i)) }
             categoryData.paintings.push(updatePaintingCat);
             console.log(categoryData);
             await addPCategoryAPI(categoryData, categoryData.id);

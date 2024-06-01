@@ -184,7 +184,7 @@ function Photography() {
           if (categoryData) {
             const updatedCategoryList = categoryData.photographs.filter(video => selectedPhotoId !== video.id);
             categoryData.photographs = [];
-            if (updatedCategoryList != []) { updatedCategoryList.map(i => categoryData.photographs.push(i)) }
+            if (updatedCategoryList !== []) { updatedCategoryList.map(i => categoryData.photographs.push(i)) }
             categoryData.photographs.push(updatePhotoCat);
             console.log(categoryData);
             await addPCategoryAPI(categoryData, categoryData.id);
