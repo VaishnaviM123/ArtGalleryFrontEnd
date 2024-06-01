@@ -7,14 +7,14 @@ function Category() {
   const params = useParams();
   const [category, setCategory] = useState(null);
 
-  const singleData = async () => {
-    const { data } = await accessSingleCategoryAPI(params.id);
-    setCategory(data);
-  };
-
   useEffect(() => {
+    const singleData = async () => {
+      const { data } = await accessSingleCategoryAPI(params.id);
+      setCategory(data);
+    };
+
     singleData();
-  }, [params,singleData]); 
+  }, [params.id]); // Use params.id as the dependency
 
   return (
     <div className='py-5' style={{ backgroundColor: '#EEEEEE', color: '#135D66' }}>
@@ -29,7 +29,7 @@ function Category() {
                   {category.paintings?.length > 0 ? (
                     <Row className='d-flex'>
                       {category.paintings.map((painting) => (
-                        <Col className='me-3 mb-4'><img src={painting.pImage} alt="..." width='100px' height='100px' /></Col>
+                        <Col className='me-3 mb-4' key={painting.id}><img src={painting.pImage} alt="..." width='100px' height='100px' /></Col>
                       ))}
                     </Row>
                   ) : (
@@ -45,7 +45,7 @@ function Category() {
                   {category.photographs?.length > 0 ? (
                     <Row className='d-flex'>
                       {category.photographs.map((photo) => (
-                        <Col className='me-3 mb-4'><img src={photo.pImage} alt="..." width='100px' height='100px' /></Col>
+                        <Col className='me-3 mb-4' key={photo.id}><img src={photo.pImage} alt="..." width='100px' height='100px' /></Col>
                       ))}
                     </Row>
                   ) : (
