@@ -335,7 +335,7 @@ function Photography() {
             <Row className='justify-content-center'>
               {currentItems.map(i => (
                 <Col key={i.id} className='mb-4 d-flex justify-content-center'>
-                  <Card style={{ width: '18em' }}>
+                  <Card style={{ width: '18em' }} data-aos="fade-out">
                     <div className='card-cont'>
                       <img src={i.pImage} style={{ cursor: 'pointer', width: '100%', height: '290px' }} alt={i.name} />
                       <div className='overlay'>

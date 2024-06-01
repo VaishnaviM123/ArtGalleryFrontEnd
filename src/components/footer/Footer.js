@@ -17,7 +17,8 @@ const Footer = () => {
         <div className="categories pt-4">
           <h5 className='fw-bold'>CATEGORIES</h5>
           <ul style={{gap:'10px'}}>
-            <Link to="/" style={{textDecoration:'none',color:'white'}}>Landing Page</Link>
+            <Link to="/" style={{textDecoration:'none',color:'white'}}><li>Landing Page</li></Link>
+            <Link to="/home" style={{textDecoration:'none',color:'white'}}><li>Home</li></Link>
             <Link to="/artworks" style={{textDecoration:'none',color:'white'}}><li>Paintings</li></Link>
             <Link to="/photography" style={{textDecoration:'none',color:'white'}}><li>Photography</li></Link>
             <Link to="/contact" style={{textDecoration:'none',color:'white'}}><li>Contact</li></Link>

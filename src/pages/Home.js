@@ -91,7 +91,7 @@ function Home() {
           ))
         ) : (
           <div>
-            <h1>No Photos Found yet</h1>
+            <h1>No Paintings Found yet</h1>
             <img src="./p1.gif" alt='...' height='60%'/>
           </div>
         )}
