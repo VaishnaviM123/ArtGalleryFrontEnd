@@ -168,7 +168,7 @@
         font-size: 18px;
     }
 }
-@media ( (max-width : 1000px) and (min-width : 500px)){
+@media (max-width : 1000px) {
     #section1 p{
         font-weight: 700;
         color : #3e4c4f;
