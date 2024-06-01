@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+}
+.custom-carousel .carousel-control-prev,
+.custom-carousel .carousel-control-next,
+.custom-carousel .carousel-indicators {
+  display: none;
+}
+.c4:hover{
+  transition: all 0.5 ease-in-out;
+  transform: scale(1.1);
+}
+@media (max-width: 700px) {
+  .head1{
+    text-align: center;
+    flex-direction: column;
+  }
+  
+}

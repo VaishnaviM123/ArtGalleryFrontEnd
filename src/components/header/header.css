@@ -1,0 +1,49 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+}
+  
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+  
+.nav ul li {
+    margin: 0 15px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+  
+.nav ul li:hover {
+    color: #2b2d2d;
+    cursor: pointer;
+}
+
+@media (min-width : 900px){
+    .i1{
+        width: 65px; 
+        height: 65px;
+    }
+    .i2{
+        width: 190px;
+        height: 85px;
+    }
+}
+
+@media (max-width : 900px){
+    .i1{
+        width: 45px; 
+        height: 45px;
+    }
+    .i2{
+        width: 150px;
+        height: 45px;
+    }
+}

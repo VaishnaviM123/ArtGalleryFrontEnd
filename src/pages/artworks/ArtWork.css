@@ -1,0 +1,79 @@
+.a1{
+    margin: 23px;
+}
+.art{
+  color:#01204E;
+  font-family: 'Playfair Display', serif;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03), rgba(255, 255,255, 0.35)),url("../../../public/bg-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card-cont {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-cont img {
+  width: 100%;
+  height: 290px;
+  transition: filter 0.3s;
+}
+
+.card-cont:hover img {
+  filter: brightness(50%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: white;
+}
+
+.card-cont:hover .overlay {
+  opacity: 1;
+}
+
+.button-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.details {
+  text-align: center;
+  padding: 10px;
+}
+
+.overlay button {
+  margin: 5px 0;
+}
+
+
+@media (min-width : 900px) {
+    .a2 Button, .a2 Form{
+        margin-right: 20px;
+    }
+    .a2 Button{
+        width: 200px;
+    } 
+}
+@media (max-width : 900px) {
+    .a2{
+        flex-direction: column;
+    }
+}

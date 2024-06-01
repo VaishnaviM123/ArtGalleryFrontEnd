@@ -1,0 +1,37 @@
+ .contact-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)),url("../../public/c1.jpg");
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+}
